@@ -22,6 +22,7 @@ export const useSaveStateToLocalStorageOnChange = () => {
   }, []);
 };
 
+// ...
 export const useSetInitialStore = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -41,5 +42,5 @@ export const useSetInitialStore = () => {
       ) as Settings;
       dispatch(setSettings(mergedSettingsState));
     }
-  }, []);
+  }, [dispatch]); // Add dispatch to the dependency array
 };
